@@ -124,7 +124,7 @@ const Footer = (props: Props) => {
           <br />
         </div>
         <p className="text-center  text-black dark:text-gray-300 dark:hover:text-white">
-          Copyright &copy; 2023 Academia Lueji | Todos direitos reservados.
+          Copyright &copy; 2023 Academia Lueji | By Marcelino Saquende.
         </p>
       </div>
       <br />
