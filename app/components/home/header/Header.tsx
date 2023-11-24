@@ -62,8 +62,7 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
       } 
     }
     if (data === null) {
-      setLogout(false);     
-      
+      setLogout(true);         
     }
   }, [data, usuario, socialAuth, isSuccess]);
 
