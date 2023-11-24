@@ -148,7 +148,7 @@ const TodosUsuarios: FC<Props> = ({ isTeam }) => {
         <Box mt="20px">
           <div className="w-full flex justify-end">
             <div
-              className={`${styles.button} !w-[200px] dark:bg-[#57c7a3]  dark:border  dark:border-[#ffffff6c]`}
+              className={`${styles.button} dark:bg-[#57c7a3]  dark:border  dark:border-[#ffffff6c]`}
               onClick={() => setActivo(!activo)}
             >
               Adicionar Membro
