@@ -36,6 +36,8 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
   const [activo, setActivo] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
   const { usuario } = useSelector((state: any) => state.auth);
+
+
   const { data } = useSession();
   const [socialAuth, { isSuccess, error, isLoading }] = useSocialAuthMutation();
   const [logout, setLogout] = useState(false);
@@ -60,9 +62,7 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
       } 
     }
     if (!usuario) {
-      if(data === null){
-      setLogout(true);
-      }
+      setLogout(true);     
       
     }
   }, [data, usuario, socialAuth, isSuccess]);
@@ -128,17 +128,12 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
                   />
                 </Link>
               ) : (
-                // <HiOutlineUserCircle
-                //   size={25}
-                //   className="hidden 800px:block cursor-pointer ml-5 my-2 text-black dark:text-white "
-                //   onClick={() => setOpen(true)}
-                // />
-                <button
-                  className="hidden 800px:block py-3 px-7 rounded-full cursor-pointer bg-[#39c1f3]  text-[16px] font-Poppins font-semibold"
+                <HiOutlineUserCircle
+                  size={25}
+                  className="hidden 800px:block cursor-pointer ml-5 my-2 text-black dark:text-white "
                   onClick={() => setOpen(true)}
-                >
-                  Login
-                </button>
+                />
+                
               )}
             </div>
           </div>
@@ -166,17 +161,12 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
                   />
                 </Link>
               ) : (
-                // <HiOutlineUserCircle
-                //   size={25}
-                //   className="hidden 800px:block cursor-pointer ml-5 my-2 text-black dark:text-white "
-                //   onClick={() => setOpen(true)}
-                // />
-                <button
-                  className="hidden 800px:block py-3 px-7 rounded-full cursor-pointer bg-[#39c1f3]  text-[16px] font-Poppins font-semibold"
+                <HiOutlineUserCircle
+                  size={25}
+                  className="hidden 800px:block cursor-pointer ml-5 my-2 text-black dark:text-white "
                   onClick={() => setOpen(true)}
-                >
-                  Login
-                </button>
+                />
+               
               )}
               <br />
               <br />
