@@ -29,7 +29,7 @@ const CustomModal: FC<Props> = ({
     >
       <Box
         className=" bg-white dark:bg-slate-900 rounded-lg p-4"
-        style={{ maxWidth: "70%", maxHeight: "70%", overflow: "auto" }}
+        style={{ maxWidth: "90%", maxHeight: "90%", overflow: "auto" }}
       >
         <Component setOpen={setOpen} setRoute={setRoute} />
       </Box>
