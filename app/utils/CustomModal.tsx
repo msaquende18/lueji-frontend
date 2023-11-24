@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { Modal, Box } from '@mui/material';
+import React, { FC } from "react";
+import { Modal, Box } from "@mui/material";
 
 type Props = {
   open: boolean;
@@ -9,18 +9,27 @@ type Props = {
   setRoute: (route: string) => void;
 };
 
-const CustomModal: FC<Props> = ({ open, setOpen, setRoute, component: Component }) => {
+const CustomModal: FC<Props> = ({
+  open,
+  setOpen,
+  setRoute,
+  component: Component,
+}) => {
   return (
     <Modal
       open={open}
       onClose={() => setOpen(false)}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Box
-        className="w-full bg-white dark:bg-slate-900 rounded-lg p-4"
-        style={{ maxWidth: '90%', maxHeight: '90%', overflow: 'auto' }}
+        className=" bg-white dark:bg-slate-900 rounded-lg p-4"
+        style={{ maxWidth: "50%", maxHeight: "50%", overflow: "auto" }}
       >
         <Component setOpen={setOpen} setRoute={setRoute} />
       </Box>
