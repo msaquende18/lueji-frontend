@@ -61,8 +61,8 @@ const Header: FC<Props> = ({ activarItem, setOpen, open, route, setRoute }) => {
         toast.success("Bem vindo de volta!!!");
       } 
     }
-    if (data === null && !usuario) {
-      setLogout(true);     
+    if (data === null) {
+      setLogout(false);     
       
     }
   }, [data, usuario, socialAuth, isSuccess]);
