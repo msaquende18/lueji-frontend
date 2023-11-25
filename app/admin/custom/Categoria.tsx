@@ -39,8 +39,8 @@ const Categoria = (props: Props) => {
   }, [data, catLayoutSucesso, error,refetch ]);
 
   const handleAdicionarCategoria = (id: any, value: string) => {
-    setCategorias((categoriaItems: any) =>
-      categoriaItems.map((i: any) =>
+    setCategorias((categoriaAnterior: any) =>
+      categoriaAnterior.map((i: any) =>
         i._id === id ? { ...i, titulo: value } : i
       )
     );
@@ -50,10 +50,7 @@ const Categoria = (props: Props) => {
     if (categorias[categorias.length - 1].titulo === "") {
       toast.error("O nome da categoria não deve estar vazia");
     } else{
-        setCategorias((categoriaItems: any) => [
-          ...categoriaItems,
-          { titulo: "" },
-        ]);
+        setCategorias((categoriaAnterior: any) => [...categoriaAnterior, {titulo:""}]);
     }
   };
 
@@ -69,7 +66,7 @@ const Categoria = (props: Props) => {
     return categorias.some((q: any) => q.titulo === "");
   };
    const handleEditarCategoria = async () => {
-      if(!naoTrocouCategoria(data.layout.categorias, categorias) && !algumaPerguntaVazia(categorias)){
+      if(!naoTrocouCategoria(data?.layout?.categorias, categorias) && !algumaPerguntaVazia(categorias)){
         await editarLayout({
             tipo: "Categorias",
             categorias,
@@ -101,8 +98,10 @@ const Categoria = (props: Props) => {
                     <AiOutlineDelete
                       className="dark:text-white text-black text-[18px] cursor-pointer"
                       onClick={() => {
-                        setCategorias((categoriaItems: any) =>
-                          categoriaItems.filter((i: any) => i._id !== item._id)
+                        setCategorias((categoriaAnterior: any) =>
+                          categoriaAnterior.filter(
+                            (i: any) => i._id !== item._id
+                          )
                         );
                       }}
                     />
@@ -123,7 +122,7 @@ const Categoria = (props: Props) => {
               styles.button
             }  dark:text-[#fff] text-black bg-[#cccccc34]
             ${
-              naoTrocouCategoria(data?.layout?.categorias, categorias) ||
+              naoTrocouCategoria(data.layout.categorias, categorias) ||
               algumaPerguntaVazia(categorias)
                 ? "!cursor-not-allowed"
                 : "!cursor-pointer !bg-[#37a39a]"
