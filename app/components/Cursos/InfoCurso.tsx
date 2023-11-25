@@ -159,7 +159,7 @@ const InfoCurso = ({
                   {Number.isInteger(data?.ratings)
                     ? data?.ratings.toFixed(1)
                     : data?.ratings.toFixed(2)}{" "}
-                  Classificação do Curso  {data?.reviews?.length} Avaliações
+                  Classificação do Curso • {data?.reviews?.length} Avaliações
                 </h5>
               </div>
               <br />
@@ -207,14 +207,17 @@ const InfoCurso = ({
               <CursoPlayer videoUrl={data?.demoUrl} titulo={data?.titulo} />
               <div className="flex items-center">
                 <h1 className="pt-5 text-[25px] font-Poppins text-black dark:text-[#fff]">
-                  {data?.preco === 0 ? "Gratuito" : data?.preco + "$"}
+                  {data?.preco === 0 ? "Gratuito" : data?.preco + ""}
                 </h1>
-                <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 font-Poppins text-black dark:text-[#fff]">
+                {/* <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 font-Poppins text-black dark:text-[#fff]">
                   {data?.precoEstimado}$
+                </h5> */}
+                <h5 className="pl-3 text-[14px] mt-[-5px] opacity-80 text-[crimson] dark:text-[crimson]">
+                  Brevemente
                 </h5>
-                <h4 className="pl-5 pt-4 text-[22px] font-Poppins text-black dark:text-[#fff]">
+                {/* <h4 className="pl-5 pt-4 text-[22px] font-Poppins text-black dark:text-[#fff]">
                   {descontoPercentagemPreco}% Off
-                </h4>
+                </h4> */}
               </div>
               <div className="flex item-center">
                 {comprado ? (
@@ -229,7 +232,7 @@ const InfoCurso = ({
                     className={`${styles.button} my-3 font-Poppins !bg-[crimson] cursor-not-allowed`}
                     onClick={handlerPedido}
                   >
-                    Comprar
+                    Inscreva-se já
                   </div>
                 )}
               </div>
@@ -242,7 +245,7 @@ const InfoCurso = ({
                 + Certificado após conclusão do curso
               </p>
               <p className="pb-1 text-black dark:text-[#fff]">
-                + Link do projecto
+                + Link do Material
               </p>
               <p className="pb-1 text-black dark:text-[#fff]">
                 + Acesso Ilimitado
