@@ -11,7 +11,9 @@ type Props = {
 
 const CursoCard:FC<Props> = ({item,isProfile}) => {
   return (
-    <Link href={!isProfile ? `curso/${item?._id}` : `curso-acesso/${item?._id}`}>
+    <Link
+      href={!isProfile ? `curso/${item?._id}` : `curso-acesso/${item?._id}`}
+    >
       <div className="w-full min-h-[35vh] dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg p-3 shadow-sm dark:shadow-inner">
         <Image
           src={item.thumbnail.url}
@@ -38,10 +40,10 @@ const CursoCard:FC<Props> = ({item,isProfile}) => {
         <div className="w-full flex items-center justify-between pt-3">
           <div className="flex">
             <h3 className="text-black dark:text-[#fff]">
-              {item.preco === 0 ? "Gratuito" : item.preco + "$"}
+              {item.preco === 0 ? "Gratuito" : item.preco + ""}
             </h3>
-            <h5 className="pl-3 text-[14px] mt-[-5px] line-through opacity-80 text-black dark:text-[#fff]">
-              {item.precoEstimado}$
+            <h5 className="pl-3 text-[14px] mt-[-5px] opacity-80 text-[crimson] dark:text-[crimson]">
+              Brevemente
             </h5>
           </div>
           <div className="flex items-center pb-3">
