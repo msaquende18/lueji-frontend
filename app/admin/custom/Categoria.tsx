@@ -23,11 +23,12 @@ const Categoria = (props: Props) => {
 
   useEffect(() => {
     if (data?.layout?.categorias) {
-      setCategorias(data.layout.categorias);
+      setCategorias(data?.layout?.categorias);
     }
     if (catLayoutSucesso) {
+       refetch();
       toast.success("Categoria actualizado!!!");
-      refetch();
+     
     }
      if (error) {
        if ("data" in error) {
@@ -38,8 +39,8 @@ const Categoria = (props: Props) => {
   }, [data, catLayoutSucesso, error,refetch ]);
 
   const handleAdicionarCategoria = (id: any, value: string) => {
-    setCategorias((categoriaAnterior: any) =>
-      categoriaAnterior.map((i: any) =>
+    setCategorias((categoriaItems: any) =>
+      categoriaItems.map((i: any) =>
         i._id === id ? { ...i, titulo: value } : i
       )
     );
@@ -49,7 +50,10 @@ const Categoria = (props: Props) => {
     if (categorias[categorias.length - 1].titulo === "") {
       toast.error("O nome da categoria não deve estar vazia");
     } else{
-        setCategorias((categoriaAnterior: any) => [...categoriaAnterior, {titulo:""}]);
+        setCategorias((categoriaItems: any) => [
+          ...categoriaItems,
+          { titulo: "" },
+        ]);
     }
   };
 
@@ -97,10 +101,8 @@ const Categoria = (props: Props) => {
                     <AiOutlineDelete
                       className="dark:text-white text-black text-[18px] cursor-pointer"
                       onClick={() => {
-                        setCategorias((categoriaAnterior: any) =>
-                          categoriaAnterior.filter(
-                            (i: any) => i._id !== item._id
-                          )
+                        setCategorias((categoriaItems: any) =>
+                          categoriaItems.filter((i: any) => i._id !== item._id)
                         );
                       }}
                     />
@@ -121,7 +123,7 @@ const Categoria = (props: Props) => {
               styles.button
             }  dark:text-[#fff] text-black bg-[#cccccc34]
             ${
-              naoTrocouCategoria(data.layout.categorias, categorias) ||
+              naoTrocouCategoria(data?.layout?.categorias, categorias) ||
               algumaPerguntaVazia(categorias)
                 ? "!cursor-not-allowed"
                 : "!cursor-pointer !bg-[#37a39a]"
@@ -129,7 +131,7 @@ const Categoria = (props: Props) => {
             !rounded absolute bottom-12 right-12
             `}
             onClick={
-              naoTrocouCategoria(data.layout.categorias, categorias) ||
+              naoTrocouCategoria(data?.layout?.categorias, categorias) ||
               algumaPerguntaVazia(categorias)
                 ? () => null
                 : handleEditarCategoria
