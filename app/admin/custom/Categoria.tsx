@@ -122,7 +122,7 @@ const Categoria = (props: Props) => {
               styles.button
             }  dark:text-[#fff] text-black bg-[#cccccc34]
             ${
-              naoTrocouCategoria(data.layout.categorias, categorias) ||
+              naoTrocouCategoria(data?.layout?.categorias, categorias) ||
               algumaPerguntaVazia(categorias)
                 ? "!cursor-not-allowed"
                 : "!cursor-pointer !bg-[#37a39a]"
