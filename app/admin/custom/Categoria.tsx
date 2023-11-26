@@ -46,11 +46,25 @@ const Categoria = (props: Props) => {
     );
   };
 
+  // const novaCategoriaHandler = () => {
+  //   if (categorias[categorias.length - 1].titulo === "") {
+  //     toast.error("O nome da categoria não deve estar vazia");
+  //   } else{
+  //       setCategorias((categoriaAnterior: any) => [...categoriaAnterior, {titulo:""}]);
+  //   }
+  // };
+
   const novaCategoriaHandler = () => {
-    if (categorias[categorias.length - 1].titulo === "") {
+    if (
+      categorias.length === 0 ||
+      categorias[categorias.length - 1].titulo !== ""
+    ) {
+      setCategorias((categoriaAnterior: any) => [
+        ...categoriaAnterior,
+        { titulo: "" },
+      ]);
+    } else {
       toast.error("O nome da categoria não deve estar vazia");
-    } else{
-        setCategorias((categoriaAnterior: any) => [...categoriaAnterior, {titulo:""}]);
     }
   };
 
