@@ -17,12 +17,12 @@ const CriarCurso = (props: Props) => {
   useEffect(() => {
     if (isSuccess) {
       toast.success("Curso criado com sucesso!");
-      // redirect("/admin/cursos");
+      redirect("/admin/cursos");
     }
     if (error) {
       if ("data" in error) {
         const errorMessage = error as any;
-        toast.error(errorMessage.data.message);
+        toast.error(errorMessage?.data?.message);
       }
     }
   }, [isLoading, isSuccess, error]);
