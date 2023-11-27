@@ -68,9 +68,9 @@ const InfoCurso = ({
               </div>
             </div>
             <br />
-            {/* <h5 className="text-black dark:text-[#fff]">
+            <h5 className="text-black dark:text-[#fff]">
               {data?.comprado} Estudantes
-            </h5> */}
+            </h5>
             <br />
             <h1 className="text-[25px] font-Poppins font-[600] text-black dark:text-[#fff]">
               O que vai aprender neste curso?
@@ -209,15 +209,15 @@ const InfoCurso = ({
                 <h1 className="pt-5 text-[25px] font-Poppins text-black dark:text-[#fff]">
                   {data?.preco === 0 ? "Gratuito" : data?.preco + ""}
                 </h1>
-                {/* <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 font-Poppins text-black dark:text-[#fff]">
+                <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 font-Poppins text-black dark:text-[#fff]">
                   {data?.precoEstimado}$
-                </h5> */}
-                <h5 className="pl-3 text-[14px] mt-[-5px] opacity-80 text-[crimson] dark:text-[crimson]">
-                  Brevemente
                 </h5>
-                {/* <h4 className="pl-5 pt-4 text-[22px] font-Poppins text-black dark:text-[#fff]">
+                {/* <h5 className="pl-3 text-[14px] mt-[-5px] opacity-80 text-[crimson] dark:text-[crimson]">
+                  Brevemente
+                </h5> */}
+                <h4 className="pl-5 pt-4 text-[22px] font-Poppins text-black dark:text-[#fff]">
                   {descontoPercentagemPreco}% Off
-                </h4> */}
+                </h4>
               </div>
               <div className="flex item-center">
                 {comprado ? (
