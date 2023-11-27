@@ -216,7 +216,10 @@ const InfoCurso = ({
                   Brevemente
                 </h5> */}
                 <h4 className="pl-5 pt-4 text-[22px] font-Poppins text-black dark:text-[#fff]">
-                  {descontoPercentagemPreco}% Off
+                  {descontoPercentagemPreco}%{" "}
+                  <span className="opacity-80 text-[crimson] dark:text-[crimson]">
+                    Off
+                  </span>{" "}
                 </h4>
               </div>
               <div className="flex item-center">
