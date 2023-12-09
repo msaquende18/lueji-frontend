@@ -50,17 +50,18 @@ export default function RootLayout({
   );
 }
 
+{
+  /** 
+   *
+
 const Custom: React.FC<{children: React.ReactNode}> = ({children}) => {
   const {isLoading} = useCarregarUsuarioQuery({});
   return <>{isLoading ? <Loader /> : <>{children}</>}</>;}
 
-
-{
-  /** 
-   * const Custom: React.FC<{children: React.ReactNode}> = ({children}) => {
+ */
+}
+ const Custom: React.FC<{children: React.ReactNode}> = ({children}) => {
    useCarregarUsuarioQuery({});
   return <>{<>{children}</>}</>;
 }
 
- */
-}
