@@ -210,7 +210,7 @@ const InfoCurso = ({
                   {data?.preco === 0 ? "Gratuito" : data?.preco + ""}
                 </h1>
                 <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80 font-Poppins text-black dark:text-[#fff]">
-                  {data?.precoEstimado}
+                  {data?.precoEstimado} kz
                 </h5>
                 {/* <h5 className="pl-3 text-[14px] mt-[-5px] opacity-80 text-[crimson] dark:text-[crimson]">
                   Brevemente
